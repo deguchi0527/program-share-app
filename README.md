@@ -1,24 +1,106 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+| -------------------| ------ | ------------------------- |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| nickname           | string | null: false               |
+| profile            | text   | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :tweets
+- has_many :memos
+- has_many :comments
+- has_many :likes
 
-* Configuration
 
-* Database creation
+## tweets テーブル
 
-* Database initialization
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| title                  | string     | null: false                    |
+| info                   | text       | null: false                    |
+| category_id            | integer    | null: false                    |
+| user                   | references | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- has_many   :comments
+- has_many   :likes
+- has_one    :tweet_link
+- belongs_to :user
 
-* Deployment instructions
 
-* ...
+## comments テーブル
+
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| text                   | text       | null: false                    |
+| user                   | references | null: false, foreign_key: true |
+| tweet                  | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :tweet
+
+
+## memos テーブル
+
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| title                  | string     | null: false                    |
+| info                   | text       | null: false                    |
+| category_id            | integer    | null: false                    |
+| user                   | references | null: false, foreign_key: true |
+
+### Association
+
+- has_one    :memo_link
+- belongs_to :user
+
+
+## tweet_linksテーブル
+
+| Column             | Type       | Options                        |
+| -------------------| ---------- | ------------------------------ |
+| link_one           | text       |                                |
+| link_two           | text       |                                |
+| link_three         | text       |                                |
+| link_four          | text       |                                |
+| tweet              | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :tweet
+
+
+## tweet_linksテーブル
+
+| Column             | Type       | Options                        |
+| -------------------| ---------- | ------------------------------ |
+| link_one           | text       |                                |
+| link_two           | text       |                                |
+| link_three         | text       |                                |
+| link_four          | text       |                                |
+| memo               | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :memo
+
+
+## likes テーブル
+
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| user                   | references | null: false, foreign_key: true |
+| tweet                  | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :tweet
