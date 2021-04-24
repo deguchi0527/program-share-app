@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-page-header {
+  padding: 2vh 10vw;
+}
+
+.header-logo {
+  height: 60px;
+  margin: 0 auto;
+}
+
+.header-logo>a {
+  text-decoration: none;
+  text-shadow: -1.7px -1.7px 0 rgba(0, 0, 0, 0.2);
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  line-height: 80px;
+}
+
+.header-form {
+  height: 60px;
+  padding: 1vh;
+}
+
+.search-form {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.search-form>.input-box {
+  width: 70%;
+  height: 5vh;
+  padding-left: 10px;
+}
+
+.search-button {
+  width: 5vh;
+  border: 0;
+  cursor: pointer;
+  background-color: #ff9933;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  width: 100%;
+}
+
+.nav {
+  font-size: 18px;
+  width: 100%;
+  padding: 1vh 1vw;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+  line-height: 32px;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  line-height: 32px;
+  color: #333333;
+}
+
+.lists-right a:hover {
+  text-decoration: none;
+  color: #333333;
+}
+
+/* タブレット表示 */
+@media (max-width: 768px){
+  .header-logo>a {
+    font-size: 24px;
+  }
+}
+
+/* スマホ表示 */
+@media (max-width: 576px) {
+  .search-form>.input-box {
+    width: 90%;
+  }
+}
