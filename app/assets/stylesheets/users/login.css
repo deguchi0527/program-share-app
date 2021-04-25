@@ -1,0 +1,39 @@
+.session-page {
+  height: 100%;
+}
+
+.login-btn {
+  width: 50%;
+  margin: 0 auto 30px;
+  margin-top: 50px;
+}
+
+.login-red-btn {
+  width: 100%;
+  background-color: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-flash-message {
+  text-align: center;
+  color: red;
+  -webkit-appearance: none;
+}
+
+/* タブレット表示 */
+@media (max-width: 768px){
+  .login-btn {
+    width: 65%;
+  }
+}
+
+/* スマホ表示時 */
+@media (max-width: 576px) {
+  .login-btn {
+    width: 80%;
+  }
+}

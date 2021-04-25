@@ -1,0 +1,21 @@
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin: 3vh 0 5vh;
+}
+
+.error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
+
+/* タブレット表示 */
+@media (max-width: 768px){
+  .error-alert {
+    margin: 2vh 0 1vh;
+  }
+  .error-message {
+    font-size: 2.0vw;
+  }
+}
