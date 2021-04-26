@@ -1,1 +1,6 @@
 <%= render "shared/header" %>
+
+<%= link_to(new_tweet_path, class: 'post-btn') do %>
+  <span class='post-btn-text'>投稿する</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "post-btn-icon" %>
+<% end %>

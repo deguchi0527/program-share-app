@@ -1,0 +1,46 @@
+/* 投稿ボタン */
+.post-btn {
+  width: 120px;
+  background-color: #555555;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.post-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.post-btn:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.post-btn-icon {
+  width: 60%;
+}
+/* /投稿ボタン */
+
+/* タブレット表示 */
+@media (max-width: 768px){
+  
+}
+
+/* スマホ表示 */
+@media (max-width: 576px) {
+  .post-btn {
+    width: 80px;
+    padding: 5px;
+  }
+  .post-btn-text {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+}
