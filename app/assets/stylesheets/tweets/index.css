@@ -8,7 +8,7 @@ a:hover {
 }
 
 .main {
-  background-color: #ffdbc9;
+  background-color: #ddffff;
 }
 
 /* 投稿一覧 */
@@ -21,7 +21,7 @@ a:hover {
 .tweet-contents>.title {
   font-size: 5vh;
   line-height: 1.4;
-  color: #3ccace;
+  color: black;
   font-weight: bold;
   margin: 1vh 0;
 }
@@ -37,7 +37,7 @@ a:hover {
   width: 37vh;
   width: 37vh;
   padding: 1vw;
-  background-color: #ffdbc9;
+  background-color: #ddffff;
 }
 
 .tweet-img-content {
@@ -49,33 +49,35 @@ a:hover {
 .tweet-img {
   width: 33vh;
   height: 33vh;
+  border-radius: 5%;
 }
 
 .tweet-info {
-  background-color: #ffdbc9;
+  background-color: #ddffff;
   color: black;
   padding: 1vh 1vw;
 }
 
 .tweet-name {
   font-size: 2.5vh;
+  padding-top: 0.5vh;
 }
 
 .tweet-category {
   font-size: 1.5vh;
   display: flex;
   justify-content: space-between;
+  padding-top: 0.5vh;
 }
 
 .star-btn {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .star-icon {
-  width: 2vw;
-  height: 2vh;
-  margin-right: 0.5vw;
+  margin-right: 0.3vw;
 }
 
 .star-count {
@@ -114,10 +116,6 @@ a:hover {
 }
 /* /投稿ボタン */
 
-/* タブレット表示 */
-@media (max-width: 768px){
-  
-}
 
 /* スマホ表示 */
 @media (max-width: 576px) {
@@ -128,5 +126,8 @@ a:hover {
   .post-btn-text {
     font-size: 14px;
     margin-bottom: 3px;
+  }
+  .star-count {
+    font-size: 2.2vh;
   }
 }
