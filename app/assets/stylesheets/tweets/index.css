@@ -1,9 +1,95 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #333333;
+}
+
+.main {
+  background-color: #ffdbc9;
+}
+
+/* 投稿一覧 */
+.tweet-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+.tweet-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  color: #3ccace;
+  font-weight: bold;
+  margin: 1vh 0;
+}
+
+.tweet-lists {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tweet-lists>.list {
+  width: 37vh;
+  width: 37vh;
+  padding: 1vw;
+  background-color: #ffdbc9;
+}
+
+.tweet-img-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.tweet-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.tweet-info {
+  background-color: #ffdbc9;
+  color: black;
+  padding: 1vh 1vw;
+}
+
+.tweet-name {
+  font-size: 2.5vh;
+}
+
+.tweet-category {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.star-btn {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  width: 2vw;
+  height: 2vh;
+  margin-right: 0.5vw;
+}
+
+.star-count {
+  font-size: 2vh;
+}
+/* /投稿一覧 */
+
+
 /* 投稿ボタン */
 .post-btn {
   width: 120px;
   background-color: #555555;
   text-align: center;
-  border-radius: 4%;
+  border-radius: 50%;
   bottom: 32px;
   right: 32px;
   position: fixed;
