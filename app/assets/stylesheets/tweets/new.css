@@ -71,6 +71,17 @@
 .hidden {
   display: none;
 }
+
+.preview-images {
+  display: flex;
+  align-items: center;
+}
+
+.preview-image {
+  width: 10vh;
+  height: 10vh;
+  margin: 0 2vh;
+}
 /* /画像 */
 
 /* 投稿タイトルと投稿説明 */

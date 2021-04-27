@@ -20,7 +20,7 @@
             <div class="click-upload">
               <label class="form-image">
                 <span class="image-file">画像1</span>
-                <%= f.file_field :image, class: "hidden" %>
+                <%= f.file_field :image, class: "hidden", id: "tweet-image" %>
               </label>
               <label class="form-image">
                 <span class="image-file">画像2</span>
@@ -36,6 +36,7 @@
               </label>
             </div>
           </div>
+          <div id="image-list" class="preview-images"></div>
           <%# /投稿画像 %>
 
           <%# 投稿タイトルと投稿説明 %>
@@ -47,7 +48,7 @@
             <%= f.text_area :title, class:"tweets-text", id:"tweet-title", placeholder:"投稿のタイトル（必須 40文字まで)", maxlength:"40" %>
             <div class="tweets-explain">
               <div class="weight-bold-text">
-                商品の説明
+                投稿の内容
                 <span class="indispensable">必須</span>
               </div>
               <%= f.text_area :info, class:"tweets-text", id:"tweet-info", placeholder:"投稿の説明（必須 1,000文字まで）（学んだことや、コードの意味、注意点など）例）Ruby on Railsについて勉強しましたです。MVCの流れを理解し実装する。" ,rows:"7" ,maxlength:"1000" %>
