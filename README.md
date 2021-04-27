@@ -78,7 +78,7 @@
 - belongs_to :tweet
 
 
-## tweet_linksテーブル
+## memo_linksテーブル
 
 | Column             | Type       | Options                        |
 | -------------------| ---------- | ------------------------------ |

@@ -1,0 +1,101 @@
+<%= render "shared/second-header"%>
+
+<div class="container-fluid tweets-contents">
+  <div class="row">
+    <div class="col-12 col-md-10 col-lg-8 tweets-main">
+        <h2 class="tweets-heading">新規投稿</h2>
+        <%= form_with model: @tweet_form, url: tweets_path, local: true do |f| %>
+          
+          <%# エラー発生時にメッセージを表示 %>
+          <%= render 'shared/error_messages', model: f.object %>
+          <%# /エラー発生時にメッセージを表示 %>
+          
+          <%# 投稿画像 %>
+          <div class="img-upload">
+            <div class="weight-bold-text">
+              投稿画像
+              <span class="indispensable">必須</span>
+              <p>※画像は四枚まで投稿できます</p>
+            </div>
+            <div class="click-upload">
+              <label class="form-image">
+                <span class="image-file">画像1</span>
+                <%= f.file_field :image, class: "hidden", id: "tweet-image" %>
+              </label>
+              <label class="form-image">
+                <span class="image-file">画像2</span>
+                <%= f.file_field :hoge, class: "hidden" %>
+              </label>
+              <label class="form-image">
+                <span class="image-file">画像3</span>
+                <%= f.file_field :hoge, class: "hidden" %>
+              </label>
+              <label class="form-image">
+                <span class="image-file">画像4</span>
+                <%= f.file_field :hoge, class: "hidden" %>
+              </label>
+            </div>
+          </div>
+          <div id="image-list" class="preview-images"></div>
+          <%# /投稿画像 %>
+
+          <%# 投稿タイトルと投稿説明 %>
+          <div class="new-tweets">
+            <div class="weight-bold-text">
+              投稿のタイトル
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :title, class:"tweets-text", id:"tweet-title", placeholder:"投稿のタイトル（必須 40文字まで)", maxlength:"40" %>
+            <div class="tweets-explain">
+              <div class="weight-bold-text">
+                投稿の内容
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.text_area :info, class:"tweets-text", id:"tweet-info", placeholder:"投稿の説明（必須 1,000文字まで）（学んだことや、コードの意味、注意点など）例）Ruby on Railsについて勉強しましたです。MVCの流れを理解し実装する。" ,rows:"7" ,maxlength:"1000" %>
+              </div>
+          </div>
+          <%# /投稿タイトルと投稿説明 %>
+
+          <%# 投稿カテゴリー %>
+          <div class="new-tweets">
+            <div class="weight-bold-text">
+              カテゴリー
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"tweet-category"}) %>
+          </div>
+          <%# /投稿カテゴリー %>
+
+          <%# 関連記事 %>
+          <div class="new-tweets">
+            <div class="weight-bold-text">
+              関連記事
+              <span class="form-any">任意</span>
+            </div>
+            <div class="tweets-article">
+            <span>記事1: </span><%= f.text_area :link_one, class:"tweets-text", id:"tweet-info", placeholder:"https://www.google.co.jp/?client=safari&channel=iphone_bm" ,rows:"1" %>
+            </div>
+            <div class="tweets-article">
+            <span>記事2: </span><%= f.text_area :link_two, class:"tweets-text", id:"tweet-info", placeholder:"https://www.google.co.jp/?client=safari&channel=iphone_bm" ,rows:"1" %>
+            </div>
+            <div class="tweets-article">
+            <span>記事3: </span><%= f.text_area :link_three, class:"tweets-text", id:"tweet-info", placeholder:"https://www.google.co.jp/?client=safari&channel=iphone_bm" ,rows:"1" %>
+            </div>
+            <div class="tweets-article">
+            <span>記事4: </span><%= f.text_area :link_four, class:"tweets-text", id:"tweet-info", placeholder:"https://www.google.co.jp/?client=safari&channel=iphone_bm" ,rows:"1" %>
+            </div>
+          </div> 
+          <%# /関連記事 %>
+
+          <%# 下部ボタン %>
+          <div class="tweet-btn-contents">
+            <%= f.submit "投稿する" ,class:"tweet-btn" %>
+            <%=link_to 'もどる', root_path, class:"back-btn" %>
+          </div>
+          <%# /下部ボタン %>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer"%>
