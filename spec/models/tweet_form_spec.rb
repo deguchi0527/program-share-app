@@ -57,7 +57,7 @@ RSpec.describe TweetForm, type: :model do
       it 'category_idが1だと保存できない' do
         @tweet_form.category_id = 1
         @tweet_form.valid?
-        expect(@tweet_form.errors.full_messages).to include("Category must be other than 1")
+        expect(@tweet_form.errors.full_messages).to include('Category must be other than 1')
       end
     end
   end
