@@ -22,7 +22,7 @@
       <% if user_signed_in? && current_user.id == @tweet.user_id%>
         <%= link_to "編集", "#", method: :get, class: "tweet-edit" %>
         <p class="or-text">or</p>
-        <%=link_to "削除", "#", method: :delete, class: "tweet-destroy"%>
+        <%=link_to "削除", tweet_path(@tweet.id), method: :delete, class: "tweet-destroy"%>
       <% end %>
       <%# /編集・削除機能実装時に変更する %>
 
