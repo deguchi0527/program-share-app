@@ -2,6 +2,8 @@ $(function() {
   // 画像1のプレビュー機能
   // input要素の値に変更があった場合、関数が発火する
   $('#tweet-image').on('change', function(e) {
+    // 画像2のボタンを表示する
+    $('#btn-two').addClass('display');
     // 画像が表示されている場合のみ、すでに存在している画像を削除する
     const $imgOne = $('#preview-one');
     if ($imgOne) {
@@ -27,6 +29,8 @@ $(function() {
   // 画像2のプレビュー機能
   // input要素の値に変更があった場合、関数が発火する
   $('#tweet-image-two').on('change', function(e) {
+    // 画像3のボタンを表示する
+    $('#btn-three').addClass('display');
     // 画像が表示されている場合のみ、すでに存在している画像を削除する
     const $imgTwo = $('#preview-two');
     if ($imgTwo) {
@@ -52,6 +56,8 @@ $(function() {
   // 画像3のプレビュー機能
   // input要素の値に変更があった場合、関数が発火する
   $('#tweet-image-three').on('change', function(e) {
+    // 画像4のボタンを表示する
+    $('#btn-four').addClass('display');
     // 画像が表示されている場合のみ、すでに存在している画像を削除する
     const $imgThree = $('#preview-three');
     if ($imgThree) {
