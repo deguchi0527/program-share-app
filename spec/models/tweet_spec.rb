@@ -51,7 +51,7 @@ RSpec.describe Tweet, type: :model do
       it 'userが紐付いていないと保存できない' do
         @tweet.user = nil
         @tweet.valid?
-        expect(@tweet.errors.full_messages).to include("User must exist")
+        expect(@tweet.errors.full_messages).to include('User must exist')
       end
       it 'category_idが1だと保存できない' do
         @tweet.category_id = 1
