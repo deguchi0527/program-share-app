@@ -1,6 +1,9 @@
 class Tweet < ApplicationRecord
   belongs_to :user
   has_one_attached :image
+  has_one_attached :image_two
+  has_one_attached :image_three
+  has_one_attached :image_four
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
