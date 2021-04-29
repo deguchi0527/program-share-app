@@ -24,13 +24,16 @@
 | title                  | string     | null: false                    |
 | info                   | text       | null: false                    |
 | category_id            | integer    | null: false                    |
+| link_one               | text       |                                |
+| link_two               | text       |                                |
+| link_three             | text       |                                |
+| link_four              | text       |                                |
 | user                   | references | null: false, foreign_key: true |
 
 ### Association
 
 - has_many   :comments
 - has_many   :likes
-- has_one    :tweet_link
 - belongs_to :user
 
 
@@ -55,42 +58,15 @@
 | title                  | string     | null: false                    |
 | info                   | text       | null: false                    |
 | category_id            | integer    | null: false                    |
+| link_one               | text       |                                |
+| link_two               | text       |                                |
+| link_three             | text       |                                |
+| link_four              | text       |                                |
 | user                   | references | null: false, foreign_key: true |
 
 ### Association
 
-- has_one    :memo_link
 - belongs_to :user
-
-
-## tweet_linksテーブル
-
-| Column             | Type       | Options                        |
-| -------------------| ---------- | ------------------------------ |
-| link_one           | text       |                                |
-| link_two           | text       |                                |
-| link_three         | text       |                                |
-| link_four          | text       |                                |
-| tweet              | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :tweet
-
-
-## memo_linksテーブル
-
-| Column             | Type       | Options                        |
-| -------------------| ---------- | ------------------------------ |
-| link_one           | text       |                                |
-| link_two           | text       |                                |
-| link_three         | text       |                                |
-| link_four          | text       |                                |
-| memo               | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :memo
 
 
 ## likes テーブル
