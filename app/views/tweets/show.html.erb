@@ -54,21 +54,21 @@
         </tbody>
       </table>
       <%# 参考記事 %>
-      <% if @tweet.tweet_link.present? %>
+      <% if @tweet.link_one.present? || @tweet.link_two.present? || @tweet.link_three.present? || @tweet.link_four.present? %>
         <div class="tweet-article-box">
           <h2 class="article-heading">＜参考記事＞</h2>
           <ul class="article-lists">
-            <% if @tweet.tweet_link.link_one.present? %>
-              <li><%= link_to "参考記事ページ①", @tweet.tweet_link.link_one, class: "article-list"%></li>
+            <% if @tweet.link_one.present? %>
+              <li><%= link_to "参考記事ページ①", @tweet.link_one, class: "article-list"%></li>
             <% end %>
-            <% if @tweet.tweet_link.link_two.present? %>
-              <li><%= link_to "参考記事ページ②", @tweet.tweet_link.link_two, class: "article-list"%></li>
+            <% if @tweet.link_two.present? %>
+              <li><%= link_to "参考記事ページ②", @tweet.link_two, class: "article-list"%></li>
             <% end %>
-            <% if @tweet.tweet_link.link_three.present? %>
-              <li><%= link_to "参考記事ページ③", @tweet.tweet_link.link_three, class: "article-list"%></li>
+            <% if @tweet.link_three.present? %>
+              <li><%= link_to "参考記事ページ③", @tweet.link_three, class: "article-list"%></li>
             <% end %>
-            <% if @tweet.tweet_link.link_four.present? %>
-              <li><%= link_to "参考記事ページ④", @tweet.tweet_link.link_four, class: "article-list"%></li>
+            <% if @tweet.link_four.present? %>
+              <li><%= link_to "参考記事ページ④", @tweet.link_four, class: "article-list"%></li>
             <% end %>
           </ul>
         </div>

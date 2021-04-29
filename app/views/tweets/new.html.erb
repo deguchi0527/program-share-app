@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-12 col-md-10 col-lg-8 tweets-main">
         <h2 class="tweets-heading">新規投稿</h2>
-        <%= form_with model: @tweet_form, url: tweets_path, local: true do |f| %>
+        <%= form_with model: @tweet, local: true do |f| %>
           
           <%# エラー発生時にメッセージを表示 %>
           <%= render 'shared/error_messages', model: f.object %>
