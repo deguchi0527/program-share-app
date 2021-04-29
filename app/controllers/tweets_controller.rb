@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, only: :new
-  before_action :set_tweet, only: :show
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @tweets = Tweet.includes(:user).order('created_at DESC')
@@ -22,14 +23,34 @@ class TweetsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @tweet.update(tweet_params)
+      redirect_to tweet_path(@tweet.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @tweet.destroy
+    redirect_to root_path
+  end
+
   private
+
+  def tweet_params
+    params.require(:tweet).permit(:image, :title, :info, :category_id, :link_one, :link_two, :link_three,
+                                  :link_four).merge(user_id: current_user.id)
+  end
 
   def set_tweet
     @tweet = Tweet.find(params[:id])
   end
 
-  def tweet_params
-    params.require(:tweet).permit(:image, :title, :info, :category_id, :link_one, :link_two, :link_three,
-                                  :link_four).merge(user_id: current_user.id)
+  def move_to_index
+    redirect_to root_path if current_user.id != @tweet.user_id
   end
 end
