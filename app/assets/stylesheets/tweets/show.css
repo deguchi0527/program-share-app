@@ -28,9 +28,6 @@
 
 .tweet-change-btn {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding-bottom: 1.8vh;
 }
 
@@ -39,12 +36,26 @@
   font-weight: 600;
 }
 
+.prev-btn {
+  display: none;
+  float: left;
+}
+
+.next-btn {
+  float: right;
+}
+
 .tweet-box-img {
   background-color: white;
   border-radius: 10%;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: none;
+}
+
+.active {
+  display: block;
 }
 
 .tweet-img-btn {
