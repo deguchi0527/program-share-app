@@ -48,7 +48,7 @@
 
 /* 画像 */
 .img-upload {
-  padding: 2vh 0 2vh 2vh;
+  padding: 2vh;
 }
 
 .weight-bold-text>p {
@@ -58,23 +58,39 @@
   color: #888;
 }
 
+.click-upload {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.preview-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3vh;
+  margin-right: 5vh;
+}
+
 .form-image {
   font-size: 12px;
   background-color: lightblue;
   color: white;
   padding: 12px;
   width: 60px;
-  margin: 5px 10px;
+  margin: 2vh 5vh;
   text-align: center;
+}
+
+.form-image:first-child {
+  margin: 5px 10px;
 }
 
 .hidden {
   display: none;
 }
 
-.preview-images {
-  display: flex;
-  align-items: center;
+.display {
+  display: block;
 }
 
 .preview-image {
@@ -166,6 +182,9 @@
   .tweet-btn-contents {
     width: 80%;
   }
+  .preview-images {
+    margin-right: 0;
+  }
 }
 
 /* スマホ表示時 */
@@ -173,7 +192,7 @@
   .select-box {
     width: 60%;
   }
-  .form-image {
-    margin: 5px auto;
+  .preview-images {
+    margin: 1vh 4vh 2vh 0.5vh;
   }
 }

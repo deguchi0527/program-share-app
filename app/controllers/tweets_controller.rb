@@ -42,7 +42,7 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweet).permit(:image, :title, :info, :category_id, :link_one, :link_two, :link_three,
+    params.require(:tweet).permit(:image, :image_two, :image_three, :image_four, :title, :info, :category_id, :link_one, :link_two, :link_three,
                                   :link_four).merge(user_id: current_user.id)
   end
 

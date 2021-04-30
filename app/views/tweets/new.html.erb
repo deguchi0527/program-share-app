@@ -18,25 +18,32 @@
               <p>※画像は四枚まで投稿できます</p>
             </div>
             <div class="click-upload">
-              <label class="form-image">
-                <span class="image-file">画像1</span>
-                <%= f.file_field :image, class: "hidden", id: "tweet-image" %>
-              </label>
-              <label class="form-image">
-                <span class="image-file">画像2</span>
-                <%= f.file_field :hoge, class: "hidden" %>
-              </label>
-              <label class="form-image">
-                <span class="image-file">画像3</span>
-                <%= f.file_field :hoge, class: "hidden" %>
-              </label>
-              <label class="form-image">
-                <span class="image-file">画像4</span>
-                <%= f.file_field :hoge, class: "hidden" %>
-              </label>
+              <div id="image-list-one" class="preview-images">
+                <label class="form-image">
+                  <span class="image-file">画像1</span>
+                  <%= f.file_field :image, class: "hidden", id: "tweet-image" %>
+                </label>
+              </div>
+              <div id="image-list-two" class="preview-images">
+                <label class="form-image hidden" id="btn-two">
+                  <span class="image-file">画像2</span>
+                  <%= f.file_field :image_two, class: "hidden", id: "tweet-image-two" %>
+                </label>
+              </div>
+              <div id="image-list-three" class="preview-images">
+                <label class="form-image hidden" id="btn-three">
+                  <span class="image-file">画像3</span>
+                  <%= f.file_field :image_three, class: "hidden", id: "tweet-image-three" %>
+                </label>
+              </div>
+              <div id="image-list-four" class="preview-images">
+                <label class="form-image hidden" id="btn-four">
+                  <span class="image-file">画像4</span>
+                  <%= f.file_field :image_four, class: "hidden", id: "tweet-image-four" %>
+                </label>
+              </div>
             </div>
           </div>
-          <div id="image-list" class="preview-images"></div>
           <%# /投稿画像 %>
 
           <%# 投稿タイトルと投稿説明 %>

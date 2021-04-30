@@ -9,7 +9,16 @@
           <div class="change-btn prev-btn">← 前へ</div>
           <div class="change-btn next-btn">次へ →</div>
         </div>
-        <%= image_tag @tweet.image, class:"tweet-box-img"%>
+        <%= image_tag @tweet.image, class:"tweet-box-img active"%>
+        <% if @tweet.image_two.present? %>
+          <%= image_tag @tweet.image_two, class:"tweet-box-img"%>
+        <% end %>
+        <% if @tweet.image_three.present? %>
+          <%= image_tag @tweet.image_three, class:"tweet-box-img"%>
+        <% end %>
+        <% if @tweet.image_four.present? %>
+          <%= image_tag @tweet.image_four, class:"tweet-box-img"%>
+        <% end %>
       </div>
       <div class="tweet-img-btn">
         <div class="tweet-page-btn">1</div>
