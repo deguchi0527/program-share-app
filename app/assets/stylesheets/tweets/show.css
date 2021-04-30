@@ -48,9 +48,8 @@
 .tweet-box-img {
   background-color: white;
   border-radius: 10%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 50vh;
+  height: 50vh;
   display: none;
 }
 
@@ -239,6 +238,10 @@
 
 /* スマホ表示 */
 @media (max-width: 576px) {
+  .tweet-box-img {
+    width: 80vw;
+    height: 40vh;
+  }
   .detail-tweet {
     font-size: 10px;
   }
