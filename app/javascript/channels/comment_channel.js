@@ -43,15 +43,5 @@ consumer.subscriptions.create("CommentChannel", {
     });
     // /hover時背景色を変更する
   
-    // クリックにより削除ボタンの表示/非表示
-    $('.fa-ellipsis-h').on('click', function() {
-      const clickIconIndex = $('.fa-ellipsis-h').index($(this));
-      if ($('.more_list').eq(clickIconIndex).css('display') == 'block') {
-        $('.more_list').eq(clickIconIndex).css('display', 'none');
-      } else {
-        $('.more_list').eq(clickIconIndex).css('display', 'block');
-      }
-    });
-    // /クリックにより削除ボタンの表示/非表示
   }
 });
