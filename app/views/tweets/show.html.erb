@@ -87,7 +87,7 @@
         <% if user_signed_in? %>
           <%= form_with model:[@tweet, @comment], local: true do |f| %>
             <%= f.text_area :text, class: "comment-text", placeholder: "コメントする"%>
-            <%= f.submit "送信", class: "comment-submit" %>
+            <%= f.submit "送信", class: "comment-submit", id: "comment-submit" %>
           <% end %>
         <% end %>
       </div>
@@ -97,10 +97,20 @@
         <h2>＜コメント一覧＞<h2>
         <div id="comments" class="comment-lists">
           <% @comments.each do |comment| %>
-            <p>
-              <strong><%= comment.user.nickname %>：</strong>
-              <%= comment.text %>
-            </p>
+            <div class="comment-list">
+              <p>
+                <strong><%= comment.user.nickname %></strong>
+                <span><%= icon("fas", "ellipsis-h")%></span>
+                <ul class="more_list">
+                  <li>
+                    <%= link_to '削除', tweet_comment_path(@tweet, comment), method: :delete %>
+                  </li>
+                </ul>
+              </p>
+              <p>
+                <%= comment.text %>
+              </p>
+            </div>
           <% end %>
         </div>
       </div>

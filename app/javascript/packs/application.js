@@ -10,6 +10,7 @@ require("jquery")
 require("bootstrap")
 require("../preview")
 require("../slide")
+require("../comment")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

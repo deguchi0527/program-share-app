@@ -10,14 +10,48 @@ consumer.subscriptions.create("CommentChannel", {
   },
 
   received(data) {
+    // 非同期でコメントを投稿
     const html = `
+    <div class="comment-list">
       <p>
-        <strong><a href="/users/${data.content.user_id}">${data.nickname}</a>:</strong>
+        <strong>${data.nickname}</strong>
+        <span><i class="fas fa-ellipsis-h"></i></span>
+        <ul class="more_list">
+          <li>
+            <a href="/tweets/${data.content.tweet_id}/comments/${data.content.id}">削除</a>
+          </li>
+        </ul>
+      </p>
+      <p>
         ${data.content.text}
-      </p>`;
-    const comments = document.getElementById("comments");
-    const newComment = document.getElementById("comment_text");
-    comments.insertAdjacentHTML("afterbegin", html);
-    newComment.value = "";
+      </p>
+    </div>`;
+    $('#comments').prepend(html);
+    $('#comment_text').val('')
+    $('#comment-submit').removeAttr('data-disable-with');
+    $('#comment-submit').prop('disabled', false);
+    // /非同期でコメントを投稿
+
+    // hover時背景色を変更する
+    $('.comment-list').on({
+      'mouseenter': function() {
+        $(this).css('background-color', '#FFDEAD');
+      },
+      'mouseleave': function() {
+        $(this).css('background-color', 'blanchedalmond');
+      }
+    });
+    // /hover時背景色を変更する
+  
+    // クリックにより削除ボタンの表示/非表示
+    $('.fa-ellipsis-h').on('click', function() {
+      const clickIconIndex = $('.fa-ellipsis-h').index($(this));
+      if ($('.more_list').eq(clickIconIndex).css('display') == 'block') {
+        $('.more_list').eq(clickIconIndex).css('display', 'none');
+      } else {
+        $('.more_list').eq(clickIconIndex).css('display', 'block');
+      }
+    });
+    // /クリックにより削除ボタンの表示/非表示
   }
 });
