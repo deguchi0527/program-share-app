@@ -1,9 +1,8 @@
 class CommentsController < ApplicationController
   def create
-    binding.pry
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to root_path
+      ActionCable.server.broadcast "comment_channel", content: @comment, nickname: @comment.user.nickname
     else
       redirect_to tweet_path(@comment.tweet.id)
     end
