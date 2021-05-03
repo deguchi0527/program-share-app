@@ -12,7 +12,6 @@
 ### Association
 
 - has_many :tweets
-- has_many :memos
 - has_many :comments
 - has_many :likes
 
@@ -24,6 +23,7 @@
 | title                  | string     | null: false                    |
 | info                   | text       | null: false                    |
 | category_id            | integer    | null: false                    |
+| private_id             | integer    | null: false                    |
 | link_one               | text       |                                |
 | link_two               | text       |                                |
 | link_three             | text       |                                |
@@ -49,24 +49,6 @@
 
 - belongs_to :user
 - belongs_to :tweet
-
-
-## memos テーブル
-
-| Column                 | Type       | Options                        |
-| ---------------------- | ---------- | ------------------------------ |
-| title                  | string     | null: false                    |
-| info                   | text       | null: false                    |
-| category_id            | integer    | null: false                    |
-| link_one               | text       |                                |
-| link_two               | text       |                                |
-| link_three             | text       |                                |
-| link_four              | text       |                                |
-| user                   | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
 
 
 ## likes テーブル
