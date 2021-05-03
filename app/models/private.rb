@@ -4,4 +4,6 @@ class Private < ActiveHash::Base
     { id: 2, name: '非公開' }
   ]
 
+  include ActiveHash::Associations
+  has_many :tweets
 end
