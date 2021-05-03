@@ -41,7 +41,7 @@
         <tbody>
           <tr>
             <th class="detail-tweet">投稿者</th>
-            <td class="detail-value"><%= @tweet.user.nickname %></td>
+            <td class="detail-value"><%= link_to @tweet.user.nickname, user_path(@tweet.user.id) %></td>
           </tr>
           <tr>
             <th class="detail-tweet">タイトル</th>

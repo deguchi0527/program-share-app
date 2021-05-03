@@ -7,11 +7,13 @@
       <%# ユーザー情報 %>
       <div class="user-nickname-info">
         <h2 class="user-show-nickname"><%= @user.nickname %></h2>
-        <p><%= icon("fas", "ellipsis-h", class: "fa-lg ellipsis-h-icon", id: "lists")%></p>
+        <% if user_signed_in? && current_user.id == @user.id%>
+          <p><%= icon("fas", "ellipsis-h", class: "fa-lg ellipsis-h-icon", id: "lists")%></p>
+        <%end%>
       </div>
       <ul class="nav-lists" id="pull-down">
         <li>
-          <%= link_to "アカウント編集", "#" %>
+            <%= link_to "アカウント編集", edit_user_path %>
           <%# 条件分岐を記述する %>
             <%= link_to "メモページ", "#" %>
           <%# /条件分岐を記述する %>

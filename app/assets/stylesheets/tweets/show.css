@@ -147,6 +147,10 @@
   border: 1px solid #ff8c00;
 }
 
+.detail-value a {
+  color: black;
+}
+
 .heart-icon {
   margin-right: 0.5vh;
 }
