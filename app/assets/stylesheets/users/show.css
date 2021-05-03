@@ -11,8 +11,7 @@
 
 .user-show-nickname {
   padding-top: 2vh;
-  font-size: 2vw;
-  
+  font-size: 2.8vh;
 }
 
 .ellipsis-h-icon {
@@ -49,19 +48,37 @@
 /* /投稿一覧 */
 .tweet-lists>.user-show-list {
   background-color: #fff;
-  width: 50vh;
-  height: 50vh;
+  width: 60vh;
+  height: 60vh;
+}
+
+.user-show-img {
+  width: 45vh;
+  height: 45vh;
 }
 /* 投稿一覧 */
 
 /* タブレット表示 */
 @media (max-width: 768px){
-  
+  .user-show-nickname {
+    font-size: 2.8vh;
+  }
 }
 
 /* スマホ表示 */
 @media (max-width: 576px) {
+  .user-show-nickname {
+    font-size: 3.5vh;
+  }
   .nav-lists {
-    width: 50%;
+    width: 55%;
+  }
+  .tweet-lists>.user-show-list {
+    width: 50vh;
+    height: 50vh;
+  }
+  .user-show-img {
+    width: 33vh;
+    height: 33vh;
   }
 }
