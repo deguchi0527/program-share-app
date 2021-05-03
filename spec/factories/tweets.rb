@@ -3,6 +3,7 @@ FactoryBot.define do
     title { 'Rubyについて' }
     info { 'Rubyのif文について勉強した。if文を使うことで条件分岐できる。' }
     category_id { 2 }
+    private_id { 2 }
     link_one { 'http://localhost:3000/' }
     link_two { 'http://localhost:3000/' }
     link_three { 'http://localhost:3000/' }
