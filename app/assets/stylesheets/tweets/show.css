@@ -147,6 +147,10 @@
   border: 1px solid #ff8c00;
 }
 
+.detail-value a {
+  color: black;
+}
+
 .heart-icon {
   margin-right: 0.5vh;
 }
@@ -245,6 +249,10 @@
 
 .comment-lists p strong {
   font-weight: bold;
+}
+
+.comment-lists p strong a {
+  color: black;
 }
 
 .fa-ellipsis-h {

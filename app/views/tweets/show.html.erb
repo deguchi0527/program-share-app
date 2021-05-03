@@ -41,7 +41,7 @@
         <tbody>
           <tr>
             <th class="detail-tweet">投稿者</th>
-            <td class="detail-value"><%= @tweet.user.nickname %></td>
+            <td class="detail-value"><%= link_to @tweet.user.nickname, user_path(@tweet.user.id) %></td>
           </tr>
           <tr>
             <th class="detail-tweet">タイトル</th>
@@ -99,7 +99,7 @@
           <% @comments.each do |comment| %>
             <div class="comment-list">
               <p>
-                <strong><%= comment.user.nickname %></strong>
+                <strong><%= link_to comment.user.nickname, user_path(comment.user.id) %></strong>
                 <% if user_signed_in? && current_user.id == comment.user_id%>
                   <span><%= icon("fas", "ellipsis-h")%></span>
                   <ul class="more_list">

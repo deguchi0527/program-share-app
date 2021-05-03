@@ -1,0 +1,58 @@
+<%= render "shared/second-header"%>
+
+<div class="container-fluid user-show">
+  <div class="row">
+    <div class="col-12 col-md-8 col-lg-8 user-info">
+
+      <%# ユーザー情報 %>
+      <div class="user-nickname-info">
+        <h2 class="user-show-nickname"><%= @user.nickname %></h2>
+        <% if user_signed_in? && current_user.id == @user.id%>
+          <p><%= icon("fas", "ellipsis-h", class: "fa-lg ellipsis-h-icon", id: "lists")%></p>
+        <%end%>
+      </div>
+      <ul class="nav-lists" id="pull-down">
+        <li>
+            <%= link_to "アカウント編集", edit_user_path %>
+          <%# 条件分岐を記述する %>
+            <%= link_to "メモページ", "#" %>
+          <%# /条件分岐を記述する %>
+          <%= link_to "投稿する", new_tweet_path %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </li>
+      </ul>
+      <h2 class="user-profile-info"><%= @user.profile %></h2>
+      <%# /ユーザー情報 %>
+
+      <%# 投稿一覧 %>
+      <ul class="tweet-lists">
+        <% @tweets.each do |tweet| %>
+          <li class="list user-show-list">
+            <%= link_to tweet_path(tweet.id) do %>
+            <div class="tweet-img-content">
+              <%= image_tag tweet.image, class: "tweet-img user-show-img" %>
+            </div>
+            <div class="tweet-info tweet-user-show">
+              <h3 class="tweet-name">
+                <%= tweet.title %>
+              </h3>
+              <div class="tweet-category">
+                <span>カテゴリー: <%= tweet.category.name %></span>
+                <div class='star-btn'>
+                  <%= icon('fas', 'star', class:"fa-lg star-icon") %>
+                  <span class='star-count'>0</span>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <%# /投稿一覧 %>
+
+    </div>
+  </div>
+</div>
+
+ 
+<%= render "shared/footer"%>

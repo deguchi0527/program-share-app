@@ -14,7 +14,7 @@ consumer.subscriptions.create("CommentChannel", {
     const html = `
     <div class="comment-list">
       <p>
-        <strong>${data.nickname}</strong>
+        <strong><a href="/users/${data.content.user_id}">${data.nickname}</a></strong>
         <span><i class="fas fa-ellipsis-h"></i></span>
         <ul class="more_list">
           <li>
