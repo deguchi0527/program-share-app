@@ -85,19 +85,36 @@
       <%# コメントフォーム %>
       <div class="comment-form">
         <% if user_signed_in? %>
-          <form>
-            <textarea class="comment-text" placeholder="コメントする"></textarea>
-            <%# <input type="submit" value="送信" class="comment-submit"> %>
-            <button type="submit" class="comment-submit">
-              <span>送信</span>
-            </button>
-          </form>
+          <%= form_with model:[@tweet, @comment], local: true do |f| %>
+            <%= f.text_area :text, class: "comment-text", placeholder: "コメントする"%>
+            <%= f.submit "送信", class: "comment-submit", id: "comment-submit" %>
+          <% end %>
         <% end %>
       </div>
       <%# /コメントフォーム %>
       <%# コメント一覧 %>
       <div class="comment-box">
-
+        <h2>＜コメント一覧＞<h2>
+        <div id="comments" class="comment-lists">
+          <% @comments.each do |comment| %>
+            <div class="comment-list">
+              <p>
+                <strong><%= comment.user.nickname %></strong>
+                <% if user_signed_in? && current_user.id == comment.user_id%>
+                  <span><%= icon("fas", "ellipsis-h")%></span>
+                  <ul class="more_list">
+                    <li>
+                      <%= link_to '削除', tweet_comment_path(@tweet, comment), method: :delete %>
+                    </li>
+                  </ul>
+                <% end %>
+              </p>
+              <p>
+                <%= comment.text %>
+              </p>
+            </div>
+          <% end %>
+        </div>
       </div>
       <%# /コメント一覧 %>
       <%# /コメント %>

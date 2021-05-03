@@ -221,6 +221,58 @@
   font-size: 14px;
   color: white;
 }
+
+.comment-box {
+  width: 100%;
+  background-color: #ffebcd;
+  border-radius: 15px;
+}
+
+.comment-lists {
+  display: flex;
+  flex-direction: column;
+  margin: 1vh 0;
+}
+
+.comment-list {
+  border: 3px solid #ffefd5;
+}
+
+.comment-lists>p {
+  padding: 0.5vh 1vh;
+  overflow-wrap: break-word;
+}
+
+.comment-lists p strong {
+  font-weight: bold;
+}
+
+.fa-ellipsis-h {
+  float: right;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.more_list {
+  padding: 0.5vh 1vh;
+  margin-left: 2vh;
+  width: 10%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  float: right;
+  display: none;
+}
+
+.more_list a {
+  color: black;
+}
+
+.comment-list>p:last-child {
+  padding: 1vh 0;
+}
 /* /コメント */
 
 /* タブレット表示 */
@@ -233,6 +285,9 @@
   }
   .comment-submit>span {
     font-size: 13px;
+  }
+  .more_list {
+    width: 15%;
   }
 }
 
@@ -275,5 +330,9 @@
   }
   .comment-submit>span {
     font-size: 12px;
+  }
+  .more_list {
+    width: 20%;
+    padding: 0.5vh 0.5vw;
   }
 }
