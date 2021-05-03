@@ -20,12 +20,12 @@ RSpec.describe Comment, type: :model do
       it 'userが紐付いていないと保存できない' do
         @comment.user = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("User must exist")
+        expect(@comment.errors.full_messages).to include('User must exist')
       end
       it 'tweetが紐付いていないと保存できない' do
         @comment.tweet = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Tweet must exist")
+        expect(@comment.errors.full_messages).to include('Tweet must exist')
       end
     end
   end

@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      ActionCable.server.broadcast "comment_channel", content: @comment, nickname: @comment.user.nickname
+      ActionCable.server.broadcast 'comment_channel', content: @comment, nickname: @comment.user.nickname
     else
       redirect_to tweet_path(@comment.tweet.id)
     end
@@ -11,9 +11,7 @@ class CommentsController < ApplicationController
   def destroy
     @tweet = Tweet.find(params[:tweet_id])
     @comment = @tweet.comments.find(params[:id])
-    if @comment.destroy
-      redirect_to tweet_path(@comment.tweet.id)
-    end
+    redirect_to tweet_path(@comment.tweet.id) if @comment.destroy
   end
 
   private

@@ -22,7 +22,7 @@ class TweetsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @tweet.comments.includes(:user).order("created_at DESC")
+    @comments = @tweet.comments.includes(:user).order('created_at DESC')
   end
 
   def edit
