@@ -247,6 +247,10 @@
   font-weight: bold;
 }
 
+.comment-lists p strong a {
+  color: black;
+}
+
 .fa-ellipsis-h {
   float: right;
   padding-right: 10px;

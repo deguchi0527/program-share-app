@@ -99,7 +99,7 @@
           <% @comments.each do |comment| %>
             <div class="comment-list">
               <p>
-                <strong><%= comment.user.nickname %></strong>
+                <strong><%= link_to comment.user.nickname, user_path(comment.user.id) %></strong>
                 <% if user_signed_in? && current_user.id == comment.user_id%>
                   <span><%= icon("fas", "ellipsis-h")%></span>
                   <ul class="more_list">
