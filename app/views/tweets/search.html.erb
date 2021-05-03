@@ -1,0 +1,38 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  <%# 投稿概要 %>
+  <div class="tweet-contents">
+    <% if @results.length != 0%>
+      <h2 class="title">投稿一覧</h2>
+      <ul class="tweet-lists">
+        <% @results.each do |result| %>
+          <li class="list">
+            <%= link_to tweet_path(result.id) do %>
+            <div class="tweet-img-content">
+              <%= image_tag result.image, class: "tweet-img" %>
+            </div>
+            <div class="tweet-info">
+              <h3 class="tweet-name">
+                <%= result.title %>
+              </h3>
+              <div class="tweet-category">
+                <span>カテゴリー: <%= result.category.name %></span>
+                <div class='star-btn'>
+                  <%= icon('fas', 'star', class:"fa-lg star-icon") %>
+                  <span class='star-count'>0</span>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <h2 class="title">該当の投稿はありません</h2>
+    <% end %>
+  </div>
+  <%# /投稿概要 %>
+</div>
+
+<%= render "shared/footer"%>

@@ -19,11 +19,11 @@ a:hover {
   padding: 10vh 0;
 }
 .tweet-contents>.title {
-  font-size: 5vh;
+  font-size: 4vh;
   line-height: 1.4;
   color: black;
   font-weight: bold;
-  margin: 1vh 0;
+  margin-bottom: 3vh;
 }
 
 .tweet-lists {
@@ -120,6 +120,9 @@ a:hover {
 
 /* スマホ表示 */
 @media (max-width: 576px) {
+  .tweet-contents>.title {
+    font-size: 3.2vh;
+  }
   .post-btn {
     width: 80px;
     padding: 5px;
