@@ -1,0 +1,71 @@
+/* ユーザー情報 */
+.user-info {
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.user-nickname-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-show-nickname {
+  padding-top: 2vh;
+  font-size: 2vw;
+  
+}
+
+.ellipsis-h-icon {
+  float: right;
+  padding-top: 2.3vh;
+}
+
+.nav-lists {
+  float: right;
+  width: 30%;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4%;
+  margin-right: 1vh;
+  display: none;
+}
+
+.nav-lists a {
+  display: block;
+  color: black;
+  padding: 1vh;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.nav-lists a:last-child {
+  border: none;
+}
+
+.user-profile-info {
+  padding: 3vh 1vh 5vh 0;
+}
+/* /ユーザー情報 */
+/* /投稿一覧 */
+.tweet-lists>.user-show-list {
+  background-color: #fff;
+  width: 50vh;
+  height: 50vh;
+}
+
+.tweet-user-show {
+  background-color: #fff;
+}
+/* 投稿一覧 */
+
+/* タブレット表示 */
+@media (max-width: 768px){
+  
+}
+
+/* スマホ表示 */
+@media (max-width: 576px) {
+  .nav-lists {
+    width: 50%;
+  }
+}
