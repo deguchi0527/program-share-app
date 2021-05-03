@@ -43,6 +43,10 @@ class TweetsController < ApplicationController
   end
 
   def search
+    if params[:q][:category_id_eq] == '1'
+      params[:q].delete(:category_id_eq)
+      @p = Tweet.ransack(params[:q])
+    end
     @results = @p.result.includes(:user).order('created_at DESC')
   end
 

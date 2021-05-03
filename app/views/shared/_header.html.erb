@@ -8,7 +8,7 @@
     <div class="col-12 col-md-7 header-form">
       <%= search_form_for @p, url: search_tweets_path, class: "search-form" do |f| %>
         <%= f.collection_select :category_id_eq, Category.all, :id, :name, {}, {class: "ransack-category-list"} %>
-        <%= f.text_field :title_eq, placeholder: "キーワードから探す", class: "input-box" %>
+        <%= f.text_field :title_cont, placeholder: "キーワードから探す", class: "input-box" %>
         <%= f.button "検索", type: "submit", class: "search-button" do %>
           <%= image_tag "search.png", class:"search-icon" %>
         <% end %>
