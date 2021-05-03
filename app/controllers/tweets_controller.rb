@@ -2,6 +2,7 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :destroy]
+  before_action :search_tweet, only: [:index, :show, :search]
 
   def index
     @tweets = Tweet.includes(:user).order('created_at DESC')
@@ -41,6 +42,10 @@ class TweetsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @results = @p.result.includes(:user).order('created_at DESC')
+  end
+
   private
 
   def tweet_params
@@ -54,5 +59,9 @@ class TweetsController < ApplicationController
 
   def move_to_index
     redirect_to root_path if current_user.id != @tweet.user_id
+  end
+
+  def search_tweet
+    @p = Tweet.ransack(params[:q])
   end
 end
