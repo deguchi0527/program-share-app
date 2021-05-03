@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :move_to_root, only: :edit
 
   def show
-    @tweets = @user.tweets
+    @tweets = @user.tweets.order('created_at DESC')
   end
 
   def edit

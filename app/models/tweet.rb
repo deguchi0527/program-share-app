@@ -15,6 +15,6 @@ class Tweet < ApplicationRecord
     validates :title
     validates :info
     validates :category_id, numericality: { other_than: 1 }
-    validates :private_id
+    validates :private_id,  numericality: { other_than: 1 }
   end
 end

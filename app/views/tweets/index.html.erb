@@ -6,25 +6,27 @@
     <h2 class="title">投稿一覧</h2>
     <ul class="tweet-lists">
       <% @tweets.each do |tweet| %>
-        <li class="list">
-          <%= link_to tweet_path(tweet.id) do %>
-          <div class="tweet-img-content">
-            <%= image_tag tweet.image, class: "tweet-img" %>
-          </div>
-          <div class="tweet-info">
-            <h3 class="tweet-name">
-              <%= tweet.title %>
-            </h3>
-            <div class="tweet-category">
-              <span>カテゴリー: <%= tweet.category.name %></span>
-              <div class='star-btn'>
-                <%= icon('fas', 'star', class:"fa-lg star-icon") %>
-                <span class='star-count'>0</span>
+        <% if tweet.private_id == 2 %>
+          <li class="list">
+            <%= link_to tweet_path(tweet.id) do %>
+            <div class="tweet-img-content">
+              <%= image_tag tweet.image, class: "tweet-img" %>
+            </div>
+            <div class="tweet-info">
+              <h3 class="tweet-name">
+                <%= tweet.title %>
+              </h3>
+              <div class="tweet-category">
+                <span>カテゴリー: <%= tweet.category.name %></span>
+                <div class='star-btn'>
+                  <%= icon('fas', 'star', class:"fa-lg star-icon") %>
+                  <span class='star-count'>0</span>
+                </div>
               </div>
             </div>
-          </div>
-          <% end %>
-        </li>
+            <% end %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
   </div>
