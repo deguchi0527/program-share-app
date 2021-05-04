@@ -54,16 +54,25 @@
           <tr>
             <th class="detail-tweet">いいね</th>
             <td class="detail-value">
-              <% if current_user.already_liked?(@tweet) %>
-                <%= button_to tweet_like_path(@tweet), method: :delete, class:"like-btn" do %>
-                  <%= icon('fas', 'heart', class: "fa-lg heart-icon unlike") %>
+              <%# ログインするといいねボタンが押せる %>
+              <% if user_signed_in? %>
+                <%# いいねの保存有無で条件分岐 %>
+                <% if current_user.already_liked?(@tweet) %>
+                  <%= button_to tweet_like_path(@tweet), method: :delete, class:"show-like-btn" do %>
+                    <%= icon('fas', 'heart', class: "fa-lg heart-icon unlike") %>
+                  <% end %>
+                <% else %>
+                  <%= button_to tweet_likes_path(@tweet), class:"show-like-btn" do %>
+                    <%= icon('fas', 'heart', class: "fa-lg heart-icon") %>
+                  <% end %>
                 <% end %>
+                <%# /いいねの保存有無で条件分岐 %>
+                <span class='heart-count'><%= @tweet.likes.count %></span>
               <% else %>
-                <%= button_to tweet_likes_path(@tweet), class:"like-btn" do %>
-                  <%= icon('fas', 'heart', class: "fa-lg heart-icon") %>
-                <% end %>
+                <%= icon('fas', 'heart', class: "fa-lg heart-icon") %>
+                <span class='heart-count'><%= @tweet.likes.count %></span>
               <% end %>
-              <span class='heart-count'><%= @tweet.likes.count %></span>
+              <%# /ログインするといいねボタンが押せる %>
             </td>
           </tr>
         </tbody>

@@ -56,6 +56,11 @@
   width: 45vh;
   height: 45vh;
 }
+
+.show-heart-btn {
+  border: none;
+  background-color: #fff;
+}
 /* 投稿一覧 */
 
 /* タブレット表示 */
