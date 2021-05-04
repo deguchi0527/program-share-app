@@ -24,6 +24,7 @@ class TweetsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user).order('created_at DESC')
+    @like = Like.new
   end
 
   def edit
