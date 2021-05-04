@@ -151,8 +151,23 @@
   color: black;
 }
 
+.detail-value:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.like-btn {
+  border: none;
+  background-color: #ffefd5;
+}
+
 .heart-icon {
   margin-right: 0.5vh;
+  color: #808080;
+}
+
+.unlike {
+  color: #e54747;
 }
 
 .heart-count {

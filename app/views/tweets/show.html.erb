@@ -55,11 +55,11 @@
             <th class="detail-tweet">いいね</th>
             <td class="detail-value">
               <% if current_user.already_liked?(@tweet) %>
-                <%= button_to tweet_like_path(@tweet), method: :delete do %>
-                  <%= icon('fas', 'heart', class: "fa-lg heart-icon") %>
+                <%= button_to tweet_like_path(@tweet), method: :delete, class:"like-btn" do %>
+                  <%= icon('fas', 'heart', class: "fa-lg heart-icon unlike") %>
                 <% end %>
               <% else %>
-                <%= button_to tweet_likes_path(@tweet) do %>
+                <%= button_to tweet_likes_path(@tweet), class:"like-btn" do %>
                   <%= icon('fas', 'heart', class: "fa-lg heart-icon") %>
                 <% end %>
               <% end %>
