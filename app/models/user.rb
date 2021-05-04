@@ -11,4 +11,8 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :profile,  presence: true
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+
+  def already_liked?(tweet)
+    self.likes.exists?(tweet_id: tweet.id)
+  end
 end
