@@ -5,6 +5,7 @@ class Tweet < ApplicationRecord
   has_one_attached :image_three
   has_one_attached :image_four
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
