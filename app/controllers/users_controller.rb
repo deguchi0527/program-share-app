@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
-  before_action :move_to_root, only: :edit
+  before_action :authenticate_user!, only: [:edit, :memo]
+  before_action :set_user, only: [:show, :edit, :update, :memo]
+  before_action :move_to_root, only: [:edit, :memo]
 
   def show
     @tweets = @user.tweets.order('created_at DESC')
@@ -15,6 +16,10 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def memo
+    @tweets = @user.tweets.order('created_at DESC')
   end
 
   private

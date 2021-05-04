@@ -1,0 +1,16 @@
+.memo-title {
+  font-size: 4vh;
+  line-height: 1.4;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 3vh;
+  text-align: center;
+  margin: 3vh 0;
+}
+
+/* スマホ表示 */
+@media (max-width: 576px) {
+  .memo-title {
+    font-size: 3.2vh;
+  }
+}
