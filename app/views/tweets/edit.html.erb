@@ -79,6 +79,16 @@
           </div>
           <%# /投稿カテゴリー %>
 
+          <%# 投稿公開の有無 %>
+          <div class="new-tweets">
+            <div class="weight-bold-text">
+              投稿公開の有無
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:private_id, Private.all, :id, :name, {}, {class:"select-box", id:"tweet-private"}) %>
+          </div>
+          <%# /投稿公開の有無 %>
+
           <%# 関連記事 %>
           <div class="new-tweets">
             <div class="weight-bold-text">

@@ -48,6 +48,11 @@ RSpec.describe Tweet, type: :model do
         @tweet.valid?
         expect(@tweet.errors.full_messages).to include("Category can't be blank")
       end
+      it 'private_idが空では保存できない' do
+        @tweet.private_id = ''
+        @tweet.valid?
+        expect(@tweet.errors.full_messages).to include("Private can't be blank")
+      end
       it 'userが紐付いていないと保存できない' do
         @tweet.user = nil
         @tweet.valid?
@@ -57,6 +62,11 @@ RSpec.describe Tweet, type: :model do
         @tweet.category_id = 1
         @tweet.valid?
         expect(@tweet.errors.full_messages).to include('Category must be other than 1')
+      end
+      it 'private_idが1だと保存できない' do
+        @tweet.private_id = 1
+        @tweet.valid?
+        expect(@tweet.errors.full_messages).to include('Private must be other than 1')
       end
     end
   end

@@ -7,27 +7,22 @@
       <%# ユーザー情報 %>
       <div class="user-nickname-info">
         <h2 class="user-show-nickname"><%= @user.nickname %></h2>
-        <% if user_signed_in? && current_user.id == @user.id%>
           <p><%= icon("fas", "ellipsis-h", class: "fa-lg ellipsis-h-icon", id: "lists")%></p>
-        <%end%>
       </div>
       <ul class="nav-lists" id="pull-down">
         <li>
-            <%= link_to "アカウント編集", edit_user_path %>
-          <%# 条件分岐を記述する %>
-            <%= link_to "メモページ", memo_user_path(@user.id) %>
-          <%# /条件分岐を記述する %>
+          <%= link_to "アカウント編集", edit_user_path %>
           <%= link_to "投稿する", new_tweet_path %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>
       </ul>
-      <h2 class="user-profile-info"><%= @user.profile %></h2>
       <%# /ユーザー情報 %>
 
       <%# 投稿一覧 %>
+      <h2 class="memo-title">非公開投稿</h2>
       <ul class="tweet-lists">
         <% @tweets.each do |tweet| %>
-          <% if tweet.private_id == 2%>
+          <% if tweet.private_id == 3%>
             <li class="list user-show-list">
               <%= link_to tweet_path(tweet.id) do %>
               <div class="tweet-img-content">
