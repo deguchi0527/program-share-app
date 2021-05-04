@@ -12,10 +12,14 @@ $(function() {
   // リストをホバーすると背景色が変更する
   $('.user-show-list').on({
     'mouseenter': function() {
+      const showList = $('.user-show-list').index($(this));
       $(this).css('background-color', '#eee');
+      $('.show-heart-btn').eq(showList).css('background-color', '#eee');
     },
     'mouseleave': function() {
+      const showList = $('.user-show-list').index($(this));
       $(this).css('background-color', '#fff');
+      $('.show-heart-btn').eq(showList).css('background-color', '#fff');
     }
   });
 });
