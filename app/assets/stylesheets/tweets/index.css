@@ -81,7 +81,7 @@ a:hover {
 
 .heart-btn {
   border: none;
-  background-color: #ddffff;
+  background-color: inherit;
 }
 
 .heart-icon {

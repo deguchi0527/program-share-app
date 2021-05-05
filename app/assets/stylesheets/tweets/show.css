@@ -155,11 +155,6 @@
   display: flex;
   align-items: center;
 }
-
-.show-like-btn {
-  border: none;
-  background-color: #ffefd5;
-}
 /* /ツイートの概要 */
 
 /* 参考記事 */
