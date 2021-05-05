@@ -268,7 +268,7 @@
   text-align: center;
   font-size: 14px;
   float: right;
-  display: none;
+  /* display: none; */
 }
 
 .more_list a {

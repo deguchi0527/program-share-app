@@ -96,7 +96,7 @@
         <h2>＜コメント一覧＞<h2>
         <div id="comments" class="comment-lists">
           <% @comments.each do |comment| %>
-            <div class="comment-list">
+            <div class="comment-list" id="<%=comment.id%>">
               <p>
                 <strong><%= link_to comment.user.nickname, user_path(comment.user.id) %></strong>
                 <% if user_signed_in? && current_user.id == comment.user_id%>

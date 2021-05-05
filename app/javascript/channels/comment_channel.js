@@ -12,13 +12,13 @@ consumer.subscriptions.create("CommentChannel", {
   received(data) {
     // 非同期でコメントを投稿
     const html = `
-    <div class="comment-list">
+    <div class="comment-list" id=${data.content.id}>
       <p>
         <strong><a href="/users/${data.content.user_id}">${data.nickname}</a></strong>
         <span><i class="fas fa-ellipsis-h"></i></span>
         <ul class="more_list">
           <li>
-            <a href="/tweets/${data.content.tweet_id}/comments/${data.content.id}">削除</a>
+            <a href="/tweets/${data.content.tweet_id}/comments/${data.content.id}", data-method="delete">削除</a>
           </li>
         </ul>
       </p>

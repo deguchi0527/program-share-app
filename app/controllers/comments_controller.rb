@@ -11,7 +11,11 @@ class CommentsController < ApplicationController
   def destroy
     @tweet = Tweet.find(params[:tweet_id])
     @comment = @tweet.comments.find(params[:id])
-    redirect_to tweet_path(@comment.tweet.id) if @comment.destroy
+    if @comment.destroy
+      ActionCable.server.broadcast 'delete_channel', comment: @comment
+    else
+      redirect_to tweet_path(@comment.tweet.id)
+    end
   end
 
   private
