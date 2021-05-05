@@ -1,0 +1,19 @@
+<%# ログインするといいねボタンが押せる %>
+<% if user_signed_in? %>
+  <%# いいねの保存有無で条件分岐 %>
+  <% if current_user.already_liked?(tweet) %>
+    <%= button_to tweet_like_path(tweet, tweet.likes), method: :delete, remote: true, class:"heart-btn" do %>
+      <%= icon('fas', 'heart', class: "fa-lg heart-icon unlike") %>
+    <% end %>
+  <% else %>
+    <%= button_to tweet_likes_path(tweet), method: :post, remote: true, class:"heart-btn" do %>
+      <%= icon('fas', 'heart', class: "fa-lg heart-icon") %>
+    <% end %>
+  <% end %>
+  <%# /いいねの保存有無で条件分岐 %>
+  <span class='heart-count'><%= tweet.likes.count %></span>
+<% else %>
+  <%= icon('fas', 'heart', class: "fa-lg heart-icon") %>
+  <span class='heart-count'><%= tweet.likes.count %></span>
+<% end %>
+<%# /ログインするといいねボタンが押せる %>
