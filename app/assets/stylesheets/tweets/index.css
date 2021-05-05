@@ -67,12 +67,6 @@ a:hover {
   justify-content: space-between;
   padding-top: 0.5vh;
 }
-
-.star-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 /* いいねボタン */
 .like-btn {
   display: flex;
@@ -90,6 +84,10 @@ a:hover {
 
 .unlike {
   color: #e54747;
+}
+
+.unlogin {
+  margin-right: 4px;
 }
 /* いいねボタン */
 /* /投稿一覧 */
