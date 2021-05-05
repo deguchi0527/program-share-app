@@ -67,20 +67,29 @@ a:hover {
   justify-content: space-between;
   padding-top: 0.5vh;
 }
-
-.star-btn {
+/* いいねボタン */
+.like-btn {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-.star-icon {
-  margin-right: 0.3vw;
+.heart-btn {
+  border: none;
+  background-color: inherit;
 }
 
-.star-count {
-  font-size: 2vh;
+.heart-icon {
+  color: #808080;
 }
+
+.unlike {
+  color: #e54747;
+}
+
+.unlogin {
+  margin-right: 4px;
+}
+/* いいねボタン */
 /* /投稿一覧 */
 
 
@@ -128,8 +137,5 @@ a:hover {
   .post-btn-text {
     font-size: 14px;
     margin-bottom: 3px;
-  }
-  .star-count {
-    font-size: 2.2vh;
   }
 }

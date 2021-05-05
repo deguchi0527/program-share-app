@@ -53,9 +53,8 @@
           </tr>
           <tr>
             <th class="detail-tweet">いいね</th>
-            <td class="detail-value">
-              <%= icon('fas', 'heart', class: "fa-lg heart-icon") %>
-              <span class='heart-count'>0</span>
+            <td class="detail-value" id="like-<%= @tweet.id %>">
+              <%= render partial: "like", locals: { tweet: @tweet } %>
             </td>
           </tr>
         </tbody>

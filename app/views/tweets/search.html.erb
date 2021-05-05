@@ -19,9 +19,8 @@
                 </h3>
                 <div class="tweet-category">
                   <span>カテゴリー: <%= result.category.name %></span>
-                  <div class='star-btn'>
-                    <%= icon('fas', 'star', class:"fa-lg star-icon") %>
-                    <span class='star-count'>0</span>
+                  <div class="like-btn" id="like-<%= result.id %>">
+                    <%= render partial: "like", locals: { tweet: result } %>
                   </div>
                 </div>
               </div>

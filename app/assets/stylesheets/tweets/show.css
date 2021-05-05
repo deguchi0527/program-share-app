@@ -151,12 +151,9 @@
   color: black;
 }
 
-.heart-icon {
-  margin-right: 0.5vh;
-}
-
-.heart-count {
-  font-size: 1.6vw;
+.detail-value:last-child {
+  display: flex;
+  align-items: center;
 }
 /* /ツイートの概要 */
 
@@ -285,9 +282,6 @@
 
 /* タブレット表示 */
 @media (max-width: 768px){
-  .heart-count {
-    font-size: 2.2vw;
-  }
   .comment-submit {
     padding: 18px 0;
   }
@@ -322,9 +316,6 @@
   .detail-value {
     font-size: 10px;
     padding: 10px;
-  }
-  .heart-count {
-    font-size: 2.5vw;
   }
   .tweet-article-box {
     margin-bottom: 5vh;
