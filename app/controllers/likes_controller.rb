@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_tweet
-  
+
   def create
     @like = current_user.likes.create(tweet_id: @tweet.id)
   end
@@ -11,6 +11,7 @@ class LikesController < ApplicationController
   end
 
   private
+
   def set_tweet
     @tweet = Tweet.find(params[:tweet_id])
   end
