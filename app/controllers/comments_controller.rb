@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: :destroy
   before_action :move_to_show, only: :destroy
-  
+
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
     @tweet = Tweet.find(params[:tweet_id])
     @comment = @tweet.comments.find(params[:id])
   end
-  
+
   def move_to_show
     redirect_to tweet_path(@comment.tweet.id) if current_user.id != @comment.user_id
   end
