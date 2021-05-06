@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.includes(:user).order('created_at DESC')
+    @tweet_likes = Tweet.all.sort {|a,b| b.liked_users.count <=> a.liked_users.count}
     @like = Like.new
   end
 
