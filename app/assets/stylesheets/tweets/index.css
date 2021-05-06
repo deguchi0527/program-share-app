@@ -7,10 +7,6 @@ a:hover {
   color: #333333;
 }
 
-.main {
-  background-color: #ddffff;
-}
-
 /* 投稿一覧 */
 .tweet-contents {
   display: flex;
