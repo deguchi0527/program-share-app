@@ -15,12 +15,9 @@ consumer.subscriptions.create("CommentChannel", {
     <div class="comment-list" id=${data.content.id}>
       <p>
         <strong><a href="/users/${data.content.user_id}">${data.nickname}</a></strong>
-        <span><i class="fas fa-ellipsis-h"></i></span>
-        <ul class="more_list">
-          <li>
-            <a href="/tweets/${data.content.tweet_id}/comments/${data.content.id}", data-method="delete">削除</a>
-          </li>
-        </ul>
+        <a href="/tweets/${data.content.tweet_id}/comments/${data.content.id}", data-method="delete">
+          <i class="far fa-trash-alt"></i>
+        </a>
       </p>
       <p>
         ${data.content.text}

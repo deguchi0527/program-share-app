@@ -252,26 +252,10 @@
   color: black;
 }
 
-.fa-ellipsis-h {
+.fa-trash-alt {
   float: right;
   padding-right: 10px;
   cursor: pointer;
-}
-
-.more_list {
-  padding: 0.5vh 1vh;
-  margin-left: 2vh;
-  width: 10%;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 14px;
-  float: right;
-  /* display: none; */
-}
-
-.more_list a {
   color: black;
 }
 
@@ -287,9 +271,6 @@
   }
   .comment-submit>span {
     font-size: 13px;
-  }
-  .more_list {
-    width: 15%;
   }
 }
 
@@ -329,9 +310,5 @@
   }
   .comment-submit>span {
     font-size: 12px;
-  }
-  .more_list {
-    width: 20%;
-    padding: 0.5vh 0.5vw;
   }
 }
