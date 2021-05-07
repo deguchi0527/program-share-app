@@ -1,0 +1,48 @@
+<div class="side-nav">
+  <ul class='side-lists'>
+    <li>
+      <%= link_to root_path, class: "home-icon" do %>
+        <% icon('fas', 'home') %>
+      <% end %>
+    </li>
+    <% if user_signed_in? %>
+    <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+    <li><%= link_to '投稿する', new_tweet_path, class: "new-tweet" %></li>
+    <% else %>
+    <li><%= link_to 'ログイン',  new_user_session_path, class: "login" %></li>
+    <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+    <% end %>
+  </ul>
+  <ul class="side-lists heart-rank">
+    <li>＜人気投稿＞</li>
+    <% num = 1 %>
+    <% count = 1 %>
+    <% likes_count = 0 %>
+    <%# いいねのランキングを表示する %>
+    <% @tweet_likes.each do |tweet_like| %>
+      <%# いいね数が0だと表示しない %>
+      <% if tweet_like.likes.length != 0 %>
+        <li>
+          <span><%= count %>位:</span>
+          <%= link_to tweet_path(tweet_like.id), class: "tweet-title" do %>
+            <%= tweet_like.title %>
+            (<%= tweet_like.likes.length %>)
+          <% end %>
+        </li>
+      <% end %>
+      <%# いいね数が同じだとカウントしない %>
+      <% if likes_count != tweet_like.likes.length %>
+        <% count += 1 %>
+      <% end %>
+      <%# いいね数が同じだとカウントしない %>
+      <%# /いいね数が0だと表示しない %>
+      <% num += 1 %>
+      <% if num > 5 %>
+        <% break %>
+      <% end %>
+      <% likes_count = tweet_like.likes.length %>
+    <% end %>
+    <%# /いいねのランキングを表示する %>
+  </ul> 
+</div>
