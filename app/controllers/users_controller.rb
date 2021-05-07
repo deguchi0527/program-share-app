@@ -38,6 +38,6 @@ class UsersController < ApplicationController
   end
 
   def like_rank
-    @tweet_likes = Tweet.all.sort {|a,b| b.liked_users.count <=> a.liked_users.count}
+    @tweet_likes = Tweet.all.sort { |a, b| b.liked_users.count <=> a.liked_users.count }
   end
 end
