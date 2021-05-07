@@ -1,0 +1,6 @@
+/* スマホ表示時 */
+@media (max-width: 576px) {
+  .main>.title {
+    font-size: 3vh;
+  }
+}

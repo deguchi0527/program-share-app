@@ -7,11 +7,10 @@
 
 .side-nav {
   width: 100%;
-  padding-left: 2vh;
 }
 
 .side-lists {
-  font-size: 2.5vh;
+  font-size: 2vh;
 }
 
 .side-lists>li {
@@ -37,12 +36,13 @@
   align-items: center;
   padding: 0;
 }
-.tweet-contents>.title {
+.main>.title {
   font-size: 4vh;
   line-height: 1.4;
   color: black;
   font-weight: bold;
-  padding: 10vh 0 3vh;
+  padding: 7vh 0 3vh;
+  text-align: center;
 }
 
 .tweet-lists {
@@ -143,7 +143,12 @@
 }
 /* /投稿ボタン */
 
-
+/* タブレット表示 */
+@media (max-width: 768px){
+  .side-lists {
+    font-size: 1.7vh;
+  }
+}
 /* スマホ表示 */
 @media (max-width: 576px) {
   .tweet-contents>.title {
