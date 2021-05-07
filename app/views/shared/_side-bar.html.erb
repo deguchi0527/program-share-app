@@ -2,13 +2,13 @@
   <ul class='side-lists'>
     <li>
       <%= link_to root_path, class: "home-icon" do %>
-        <% icon('fas', 'home') %>
+        <% icon('fas', 'home', class:'fa-lg') %>
       <% end %>
     </li>
     <% if user_signed_in? %>
     <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
-    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
     <li><%= link_to '投稿する', new_tweet_path, class: "new-tweet" %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
     <% else %>
     <li><%= link_to 'ログイン',  new_user_session_path, class: "login" %></li>
     <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
@@ -18,13 +18,13 @@
     <li>＜人気投稿＞</li>
     <% num = 1 %>
     <% count = 1 %>
-    <% likes_count = 0 %>
+    <% likes_count = 1 %>
     <%# いいねのランキングを表示する %>
     <% @tweet_likes.each do |tweet_like| %>
       <%# いいね数が0だと表示しない %>
       <% if tweet_like.likes.length != 0 %>
-        <li>
-          <span><%= count %>位:</span>
+        <li class="heart-rank-info">
+          <span><%= count %>位</span>
           <%= link_to tweet_path(tweet_like.id), class: "tweet-title" do %>
             <%= tweet_like.title %>
             (<%= tweet_like.likes.length %>)

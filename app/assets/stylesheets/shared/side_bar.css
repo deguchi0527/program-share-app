@@ -1,0 +1,52 @@
+/* サイドバー */
+.side-bar {
+  background-color: #ffebcd;
+  padding-left: 2vw;
+}
+
+.side-nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  margin-bottom: 3vh;
+}
+
+.side-lists {
+  font-size: 20px;
+}
+
+.side-lists>li {
+  margin: 2vh;
+  padding: 1vh;
+  padding-left: 0;
+}
+
+.side-lists li a:hover {
+  border-radius: 50px;
+  background-color: #ffdead;
+  padding: 2vh;
+}
+
+.home-icon {
+  color: #ffa500;
+}
+
+.home-icon:hover {
+  color: #ffa500;
+}
+
+.heart-rank {
+  margin-top: 5vh;
+  overflow-wrap: break-word;
+}
+
+.heart-rank>li {
+  padding: 0;
+}
+
+.heart-rank-info {
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+}
+/* /サイドバー */
