@@ -1,48 +1,37 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  flex-flow: column;
-  min-height: 100vh;
-}
-
-.main {
-  flex: 1;
-}
-
 .top-page-header {
-  padding: 2vh 15vw;
-  border-bottom: 2px solid #ffefd5;
+  border-bottom: 3px solid #ffefd5;
 }
 
 .header-logo {
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-logo>a {
   text-decoration: none;
   text-shadow: -1.7px -1.7px 0 rgba(0, 0, 0, 0.2);
-  font-size: 30px;
+  font-size: 24px;
   color: rgba(0, 0, 0, 0.6);
   font-weight: bold;
   line-height: 80px;
 }
 
 .header-form {
-  padding: 1vh 1vh 0 1vh;
+  padding: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-form {
-  width: 100%;
+  width: 80%;
   height: 5vh;
   display: flex;
-  margin-bottom: 5px;
 }
 
 .ransack-category-list {
-  width: 15%;
+  width: 20%;
   padding-left: 5px;
   border: 1px solid;
   border-right: none;
@@ -51,7 +40,7 @@ body {
 }
 
 .search-form>.input-box {
-  width: 85%;
+  width: 80%;
   padding-left: 10px;
   border: 1px solid;
   border-left-color: rgba(0, 0, 0, 0.2);
@@ -65,6 +54,7 @@ body {
   padding: 8px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .search-icon {
@@ -72,7 +62,7 @@ body {
 }
 
 .nav {
-  font-size: 18px;
+  font-size: 14px;
   width: 100%;
   padding-top: 1vh;
   display: flex;
@@ -95,34 +85,31 @@ body {
 .logout {
   text-decoration: none;
   color: #333333;
-  line-height: 32px;
 }
 
 .login {
   text-decoration: none;
-  line-height: 32px;
   margin-right: 3vw;
   color: #333333;
 }
 
 .sign-up {
   text-decoration: none;
-  line-height: 32px;
-  color: #333333;
-}
-
-.lists-right a:hover {
-  text-decoration: none;
   color: #333333;
 }
 
 /* タブレット表示 */
 @media (max-width: 768px){
-  .header-logo>a {
-    font-size: 24px;
+  .header-logo {
+    justify-content: flex-start;
+    padding-left: 5vh;
   }
-  .nav {
-    padding-top: 0;
+  .header-logo>a {
+    font-size: 30px;
+  }
+  .header-form {
+    justify-content: flex-start;
+    padding-left: 5vh;
   }
 }
 
@@ -133,17 +120,20 @@ body {
   }
   .header-logo {
     height: 60px;
+    padding-left: 1vh;
+  }
+  .header-logo>a {
+    font-size: 24px;
   }
   .header-form {
     padding: 1vh 1vh 0 1vh;
   }
   .search-form {
-    height: 6vh;
+    width: 100%;
+    height: 5.7vh;
+    margin-bottom: 5px;
   }
   .search-form>.input-box {
     width: 90%;
-  }
-  .nav {
-    font-size: 14px;
   }
 }
