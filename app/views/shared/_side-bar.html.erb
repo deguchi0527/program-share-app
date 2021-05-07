@@ -16,32 +16,35 @@
   </ul>
   <ul class="side-lists heart-rank">
     <li>＜人気投稿＞</li>
-    <% num = 1 %>
-    <% count = 1 %>
-    <% likes_count = 1 %>
+    <% j = 1 %>
+    <% lastLike = @tweet_likes[0].likes.length %>
     <%# いいねのランキングを表示する %>
-    <% @tweet_likes.each do |tweet_like| %>
+    <% @tweet_likes.each.with_index(1) do |tweet_like, i| %>
       <%# いいね数が0だと表示しない %>
       <% if tweet_like.likes.length != 0 %>
-        <li class="heart-rank-info">
-          <span><%= count %>位</span>
-          <%= link_to tweet_path(tweet_like.id), class: "tweet-title" do %>
-            <%= tweet_like.title %>
-            (<%= tweet_like.likes.length %>)
-          <% end %>
-        </li>
+        <% if tweet_like.likes.length != lastLike %>
+          <% j = i %>
+          <li class="heart-rank-info">
+            <span><%= j %>位</span>
+            <%= link_to tweet_path(tweet_like.id), class: "tweet-title" do %>
+              <%= tweet_like.title %>
+              (<%= tweet_like.likes.length %>)
+            <% end %>
+          </li>
+          <% lastLike = tweet_like.likes.length %>
+        <% else %>
+          <% lastLike = tweet_like.likes.length %>
+          <li class="heart-rank-info">
+            <span><%= j %>位</span>
+            <%= link_to tweet_path(tweet_like.id), class: "tweet-title" do %>
+              <%= tweet_like.title %>
+              (<%= tweet_like.likes.length %>)
+            <% end %>
+          </li>
+        <% end %>
       <% end %>
-      <%# いいね数が同じだとカウントしない %>
-      <% if likes_count != tweet_like.likes.length %>
-        <% count += 1 %>
-      <% end %>
-      <%# いいね数が同じだとカウントしない %>
       <%# /いいね数が0だと表示しない %>
-      <% num += 1 %>
-      <% if num > 5 %>
-        <% break %>
-      <% end %>
-      <% likes_count = tweet_like.likes.length %>
+      <% break if i == 5 %>
     <% end %>
     <%# /いいねのランキングを表示する %>
   </ul> 
