@@ -3,6 +3,7 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :destroy]
   before_action :search_tweet, only: [:index, :show, :search]
+  before_action :like_rank, only: [:index, :search]
 
   def index
     @tweets = Tweet.includes(:user).order('created_at DESC')
@@ -69,5 +70,9 @@ class TweetsController < ApplicationController
 
   def search_tweet
     @p = Tweet.ransack(params[:q])
+  end
+
+  def like_rank
+    @tweet_likes = Tweet.all.sort { |a, b| b.liked_users.count <=> a.liked_users.count }
   end
 end

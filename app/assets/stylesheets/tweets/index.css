@@ -1,29 +1,18 @@
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #333333;
-}
-
-.main {
-  background-color: #ddffff;
-}
 
 /* 投稿一覧 */
 .tweet-contents {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  padding: 0;
 }
-.tweet-contents>.title {
+.main>.title {
   font-size: 4vh;
   line-height: 1.4;
   color: black;
   font-weight: bold;
-  margin-bottom: 3vh;
+  padding: 7vh 0 3vh;
+  text-align: center;
 }
 
 .tweet-lists {
@@ -59,6 +48,7 @@ a:hover {
 .tweet-name {
   font-size: 2.5vh;
   padding-top: 0.5vh;
+  overflow-wrap: break-word;
 }
 
 .tweet-category {
@@ -124,7 +114,12 @@ a:hover {
 }
 /* /投稿ボタン */
 
-
+/* タブレット表示 */
+@media (max-width: 768px){
+  .side-lists {
+    font-size: 1.7vh;
+  }
+}
 /* スマホ表示 */
 @media (max-width: 576px) {
   .tweet-contents>.title {

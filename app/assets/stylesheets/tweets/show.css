@@ -142,7 +142,7 @@
 }
 
 .detail-value {
-  width: 80%;
+  width: 100%;
   padding: 20px;
   border: 1px solid #ff8c00;
 }
@@ -239,7 +239,7 @@
   border: 3px solid #ffefd5;
 }
 
-.comment-lists>p {
+.comment-lists p {
   padding: 0.5vh 1vh;
   overflow-wrap: break-word;
 }

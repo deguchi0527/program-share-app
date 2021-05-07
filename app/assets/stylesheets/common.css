@@ -1,0 +1,26 @@
+/* 共通 */
+* {
+  box-sizing: border-box;
+}
+
+.tweet-contents {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #333333;
+}
+
+/* /共通 */

@@ -1,35 +1,44 @@
-<%= render "shared/header" %>
-
-<div class="main">
-  <%# 投稿一覧 %>
-  <div class="tweet-contents">
-    <h2 class="title">投稿一覧</h2>
-    <ul class="tweet-lists">
-      <% @tweets.each do |tweet| %>
-        <% if tweet.private_id == 2 %>
-          <li class="list">
-            <%= link_to tweet_path(tweet.id) do %>
-            <div class="tweet-img-content">
-              <%= image_tag tweet.image, class: "tweet-img" %>
-            </div>
-            <div class="tweet-info">
-              <h3 class="tweet-name">
-                <%= tweet.title %>
-              </h3>
-              <div class="tweet-category">
-                <span>カテゴリー: <%= tweet.category.name %></span>
-                <div class="like-btn" id="like-<%= tweet.id %>">
-                  <%= render partial: "like", locals: { tweet: tweet } %>
+<div class="container-fluid">
+  <div class="row">
+    <%# サイドバー %>
+    <div class="d-none d-md-block col-md-3 side-bar">
+      <%= render "shared/side-bar" %>
+    </div>
+    <%# /サイドバー %>
+    <%# 投稿一覧 %>
+    <div class="col-12 col-md-9 tweet-contents">
+      <%= render "shared/header" %>
+      <div class="main">
+        <h2 class="title">投稿一覧</h2>
+        <ul class="tweet-lists">
+          <% @tweets.each do |tweet| %>
+            <% if tweet.private_id == 2 %>
+              <li class="list">
+                <%= link_to tweet_path(tweet.id) do %>
+                <div class="tweet-img-content">
+                  <%= image_tag tweet.image, class: "tweet-img" %>
                 </div>
-              </div>
-            </div>
+                <div class="tweet-info">
+                  <h3 class="tweet-name">
+                    <%= tweet.title %>
+                  </h3>
+                  <div class="tweet-category">
+                    <span>カテゴリー: <%= tweet.category.name %></span>
+                    <div class="like-btn" id="like-<%= tweet.id %>">
+                      <%= render partial: "like", locals: { tweet: tweet } %>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </li>
             <% end %>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
+          <% end %>
+        </ul>
+      </div>
+      <%= render "shared/footer"%>
+    </div>
+    <%# /投稿一覧 %>
   </div>
-  <%# /投稿一覧 %>
 </div>
 
 <%# 投稿ページ遷移ボタン %>
@@ -38,5 +47,3 @@
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: 'post-btn-icon' %>
 <% end %>
 <%# /投稿ページ遷移ボタン %>
-
-<%= render "shared/footer"%>

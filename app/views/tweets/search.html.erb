@@ -1,39 +1,46 @@
-<%= render "shared/header" %>
-
-<div class="main">
-  <%# 投稿概要 %>
-  <div class="tweet-contents">
-    <% if @results.length != 0%>
-      <h2 class="title">投稿一覧</h2>
-      <ul class="tweet-lists">
-        <% @results.each do |result| %>
-          <% if result.private_id == 2%>
-            <li class="list">
-              <%= link_to tweet_path(result.id) do %>
-              <div class="tweet-img-content">
-                <%= image_tag result.image, class: "tweet-img" %>
-              </div>
-              <div class="tweet-info">
-                <h3 class="tweet-name">
-                  <%= result.title %>
-                </h3>
-                <div class="tweet-category">
-                  <span>カテゴリー: <%= result.category.name %></span>
-                  <div class="like-btn" id="like-<%= result.id %>">
-                    <%= render partial: "like", locals: { tweet: result } %>
+<div class="container-fluid">
+  <div class="row">
+    <%# サイドバー %>
+    <div class="d-none d-md-block col-md-3 side-bar">
+      <%= render "shared/side-bar" %>
+    </div>
+    <%# /サイドバー %>
+    <%# 投稿概要 %>
+    <div class="col-12 col-md-9 tweet-contents">
+      <%= render "shared/header" %>
+      <div class="main">
+        <% if @results.length != 0%>
+          <h2 class="title">検索一覧</h2>
+          <ul class="tweet-lists">
+            <% @results.each do |result| %>
+              <% if result.private_id == 2%>
+                <li class="list">
+                  <%= link_to tweet_path(result.id) do %>
+                  <div class="tweet-img-content">
+                    <%= image_tag result.image, class: "tweet-img" %>
                   </div>
-                </div>
-              </div>
+                  <div class="tweet-info">
+                    <h3 class="tweet-name">
+                      <%= result.title %>
+                    </h3>
+                    <div class="tweet-category">
+                      <span>カテゴリー: <%= result.category.name %></span>
+                      <div class="like-btn" id="like-<%= result.id %>">
+                        <%= render partial: "like", locals: { tweet: result } %>
+                      </div>
+                    </div>
+                  </div>
+                  <% end %>
+                </li>
               <% end %>
-            </li>
-          <% end %>
+            <% end %>
+          </ul>
+        <% else %>
+          <h2 class="title">該当の投稿はありません</h2>
         <% end %>
-      </ul>
-    <% else %>
-      <h2 class="title">該当の投稿はありません</h2>
-    <% end %>
+      </div>
+      <%= render "shared/footer"%>
+    </div>
+    <%# /投稿概要 %>
   </div>
-  <%# /投稿概要 %>
 </div>
-
-<%= render "shared/footer"%>
