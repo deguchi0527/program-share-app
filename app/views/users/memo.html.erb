@@ -1,51 +1,53 @@
-<%= render "shared/second-header"%>
-
-<div class="container-fluid user-show main">
+<div class="container-fluid user-show">
   <div class="row">
-    <div class="col-12 col-md-8 col-lg-8 user-info">
+    <%# サイドバー %>
+    <div class="d-none d-md-block col-md-3 side-bar">
+      <%= render "shared/side-bar" %>
+    </div>
+    <%# /サイドバー %>
+    <div class="col-12 col-md-9 user-info">
+      <%= render "shared/second-header"%>
+      <div class="main show-contents">
+        <%# ユーザー情報 %>
+        <div class="user-nickname-info">
+          <h2 class="user-show-nickname"><%= @user.nickname %></h2>
+            <p><%= icon("fas", "ellipsis-h", class: "fa-lg ellipsis-h-icon", id: "lists")%></p>
+        </div>
+        <ul class="nav-lists" id="pull-down">
+          <li>
+            <%= link_to "アカウント編集", edit_user_path %>
+            <%= link_to "投稿する", new_tweet_path %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </li>
+        </ul>
+        <%# /ユーザー情報 %>
 
-      <%# ユーザー情報 %>
-      <div class="user-nickname-info">
-        <h2 class="user-show-nickname"><%= @user.nickname %></h2>
-          <p><%= icon("fas", "ellipsis-h", class: "fa-lg ellipsis-h-icon", id: "lists")%></p>
-      </div>
-      <ul class="nav-lists" id="pull-down">
-        <li>
-          <%= link_to "アカウント編集", edit_user_path %>
-          <%= link_to "投稿する", new_tweet_path %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-      </ul>
-      <%# /ユーザー情報 %>
-
-      <%# 投稿一覧 %>
-      <h2 class="memo-title">非公開投稿</h2>
-      <ul class="tweet-lists">
-        <% @tweets.each do |tweet| %>
-          <% if tweet.private_id == 3%>
-            <li class="list user-show-list">
-              <%= link_to tweet_path(tweet.id) do %>
-              <div class="tweet-img-content">
-                <%= image_tag tweet.image, class: "tweet-img user-show-img" %>
-              </div>
-              <div class="tweet-info tweet-user-show">
-                <h3 class="tweet-name">
-                  <%= tweet.title %>
-                </h3>
-                <div class="tweet-category">
-                  <span>カテゴリー: <%= tweet.category.name %></span>
+        <%# 投稿一覧 %>
+        <h2 class="memo-title">非公開投稿</h2>
+        <ul class="tweet-lists">
+          <% @tweets.each do |tweet| %>
+            <% if tweet.private_id == 3 %>
+              <li class="list user-show-list">
+                <%= link_to tweet_path(tweet.id) do %>
+                <div class="tweet-img-content">
+                  <%= image_tag tweet.image, class: "tweet-img user-show-img" %>
                 </div>
-              </div>
-              <% end %>
-            </li>
+                <div class="tweet-info tweet-user-show">
+                  <h3 class="tweet-name">
+                    <%= tweet.title %>
+                  </h3>
+                  <div class="tweet-category">
+                    <span>カテゴリー: <%= tweet.category.name %></span>
+                  </div>
+                </div>
+                <% end %>
+              </li>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
-      <%# /投稿一覧 %>
-
+        </ul>
+        <%# /投稿一覧 %>
+      </div>
+      <%= render "shared/footer"%>
     </div>
   </div>
 </div>
-
- 
-<%= render "shared/footer"%>

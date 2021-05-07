@@ -1,6 +1,13 @@
 /* ユーザー情報 */
 .user-info {
-  background-color: #fff;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+.show-contents {
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -60,6 +67,9 @@
 
 /* タブレット表示 */
 @media (max-width: 768px){
+  .show-contents {
+    width: 90%;
+  }
   .user-show-nickname {
     font-size: 2.8vh;
   }
@@ -67,6 +77,9 @@
 
 /* スマホ表示 */
 @media (max-width: 576px) {
+  .show-contents {
+    width: 98%;
+  }
   .user-show-nickname {
     font-size: 3.5vh;
   }
