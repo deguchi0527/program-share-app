@@ -17,12 +17,11 @@
   <ul class="side-lists heart-rank">
     <li>＜人気投稿＞</li>
     <% j = 1 %>
-    <% lastLike = @tweet_likes[0].likes.length %>
     <%# いいねのランキングを表示する %>
     <% @tweet_likes.each.with_index(1) do |tweet_like, i| %>
       <%# いいね数が0だと表示しない %>
       <% if tweet_like.likes.length != 0 %>
-        <% if tweet_like.likes.length != lastLike %>
+        <% if tweet_like.likes.length != @lastLike %>
           <% j = i %>
           <li class="heart-rank-info">
             <span><%= j %>位</span>
@@ -31,9 +30,9 @@
               (<%= tweet_like.likes.length %>)
             <% end %>
           </li>
-          <% lastLike = tweet_like.likes.length %>
+          <% @lastLike = tweet_like.likes.length %>
         <% else %>
-          <% lastLike = tweet_like.likes.length %>
+          <% @lastLike = tweet_like.likes.length %>
           <li class="heart-rank-info">
             <span><%= j %>位</span>
             <%= link_to tweet_path(tweet_like.id), class: "tweet-title" do %>
