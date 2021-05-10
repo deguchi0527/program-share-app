@@ -8,6 +8,7 @@
 }
 .main>.title {
   font-size: 4vh;
+  font-style: italic;
   line-height: 1.4;
   color: black;
   font-weight: bold;
@@ -26,6 +27,10 @@
   width: 37vh;
   width: 37vh;
   padding: 1vw;
+}
+
+.tweet-lists>.list:hover {
+  background-color: #eee;
 }
 
 .tweet-img-content {

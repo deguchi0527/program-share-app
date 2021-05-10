@@ -11,6 +11,7 @@
 .header-logo>a {
   text-decoration: none;
   text-shadow: -1.7px -1.7px 0 rgba(0, 0, 0, 0.2);
+  font-style: italic;
   font-size: 24px;
   color: rgba(0, 0, 0, 0.6);
   font-weight: bold;
