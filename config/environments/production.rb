@@ -113,4 +113,8 @@ Rails.application.configure do
   ActionCable.server.config.disable_request_forgery_protection = true
   config.action_cable.url = "wss://program-share-app.herokuapp.com/cable" 
   config.action_cable.allowed_request_origins = ['https://program-share-app.herokuapp.com', 'http://program-share-app.herokuapp.com']
+
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = "ws://18.178.33.101/cable" 
+  config.action_cable.allowed_request_origins = ['http://18.178.33.101']
 end
