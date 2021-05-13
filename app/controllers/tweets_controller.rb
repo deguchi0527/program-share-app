@@ -73,7 +73,7 @@ class TweetsController < ApplicationController
   end
 
   def like_rank
-    @tweet_likes = Tweet.all.sort { |a, b| b.liked_users.count <=> a.liked_users.count }
+    @tweet_likes = Tweet.where(private_id: 2).sort { |a, b| b.liked_users.count <=> a.liked_users.count }
     if @tweet_likes.present?
       @lastLike = @tweet_likes[0].likes.length
     else
