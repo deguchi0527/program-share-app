@@ -43,7 +43,7 @@
 
 <%# 投稿ページ遷移ボタン %>
 <%= link_to(new_tweet_path, class: 'post-btn') do %>
-  <span class='post-btn-text'>投稿する</span>
-  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: 'post-btn-icon' %>
+  <span class='post-btn-text'>投稿</span>
+  <%= icon('fas', 'camera', class: "fa-lg post-btn-icon") %>
 <% end %>
 <%# /投稿ページ遷移ボタン %>

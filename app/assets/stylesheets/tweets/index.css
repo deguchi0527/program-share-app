@@ -90,32 +90,33 @@
 
 /* 投稿ボタン */
 .post-btn {
-  width: 120px;
-  background-color: #555555;
+  width: 60px;
+  background-color: #ffebcd;
   text-align: center;
   border-radius: 50%;
-  bottom: 32px;
-  right: 32px;
+  bottom: 65px;
+  right: 10px;
   position: fixed;
-  padding: 15px;
+  padding: 5px;
   z-index: 10;
+  display: none;
 }
 
 .post-btn-text {
-  color: #fff;
+  color: #555555;
   display: block;
-  font-size: 18px;
+  font-size: 14px;
   text-decoration: none;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .post-btn:hover {
   text-decoration: none;
-  color: #fff;
+  color: #555555;
 }
 
 .post-btn-icon {
-  width: 60%;
+  color: #888888;
 }
 /* /投稿ボタン */
 
@@ -131,11 +132,6 @@
     font-size: 3.2vh;
   }
   .post-btn {
-    width: 80px;
-    padding: 5px;
-  }
-  .post-btn-text {
-    font-size: 14px;
-    margin-bottom: 3px;
+    display: block;
   }
 }
